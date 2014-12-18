@@ -71,7 +71,7 @@ const (
 	STATEINC = 200 // increase for states          statemem
 
 	NAMESIZE = 50
-	NTYPES   = 63
+	NTYPES   = 100
 	ISIZE    = 400
 
 	PRIVATE = 0xE000 // unicode private use
@@ -139,9 +139,9 @@ const NOMORE = -1000
 // macros for getting associativity and precedence levels
 func ASSOC(i int) int { return i & 3 }
 
-func PLEVEL(i int) int { return (i >> 4) & 077 }
+func PLEVEL(i int) int { return (i >> 4) & 0777 }
 
-func TYPE(i int) int { return (i >> 10) & 077 }
+func TYPE(i int) int { return (i >> 10) & 0777 }
 
 // macros for setting associativity and precedence levels
 func SETASC(i, j int) int { return i | j }
